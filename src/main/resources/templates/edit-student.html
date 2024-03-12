@@ -2,14 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Edit Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<h1>Edit Student</h1>
-<form th:action="@{/edit-student/{id}(id=${student.id})}" method="post">
-    <input type="text" th:field="*{student.firstname}" placeholder="First Name">
-    <input type="text" th:field="*{student.lastname}" placeholder="Last Name">
-    <button type="submit">Save</button>
+<h1 class="text-blue-500 text-center text-3xl p-4" >Edit Student</h1>
+<form class="max-w-xl mx-auto flex gap-4" th:action="@{/edit-student/{id}(id=${student.id})}" method="post">
+    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" th:field="*{student.firstname}" placeholder="First Name">
+    <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" th:field="*{student.lastname}" placeholder="Last Name">
+    <button class=" py-2 px-4 bg-blue-200 rounded-lg" type="submit">Save</button>
 </form>
-<a href="/students">Back to Student List</a>
+<div class="max-w-xl mx-auto mt-8">
+    <a href="/students" class=" py-2 px-4 bg-blue-200 rounded-lg" >Back to Student List</a>
+</div>
+
 </body>
 </html>

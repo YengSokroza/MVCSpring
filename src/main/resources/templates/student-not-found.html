@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html  lang="en">
 <head>
     <title>Student Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<h1>Student Not Found</h1>
-<p>The student with the specified ID was not found.</p>
-<a href="/students">Back to Student List</a>
+    <h1 class="text-red-500 text-center text-3xl p-4" >Student Not Found</h1>
+    <p class="text-gray-500 text-center text-xl p-4">The student with the specified ID was not found.</p>
+    <div class="w-full h-auto flex justify-center items-center mt-8">
+        <a href="/students" class=" py-2 px-4 bg-blue-200 rounded-lg" >Back to Student List</a>
+    </div>
 </body>
 </html>

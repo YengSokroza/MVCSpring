@@ -70,10 +70,16 @@ public class StudentController {
         // Find the student with the given ID from the list or database
         Student student = findStudentById(id);
         // Update the student's properties with the values from the updatedStudent object
-        assert student != null;
-        student.setFirstname(updatedStudent.getFirstname());
-        student.setLastname(updatedStudent.getLastname());
-        return "redirect:/students";
+        if (student != null) {
+            student.setFirstname(updatedStudent.getFirstname());
+            student.setLastname(updatedStudent.getLastname());
+            return "redirect:/students";
+        } else {
+            // Handle case when student with the given ID is not found
+            return "student-not-found"; // Thymeleaf template name for displaying an error message
+        }
+
+
     }
     @GetMapping("/delete-student/{id}")
     public String deleteStudent(@PathVariable int id) {
